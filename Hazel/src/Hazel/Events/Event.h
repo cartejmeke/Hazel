@@ -15,7 +15,7 @@ namespace Hazel {
 		None = 0,
 		WindowClose, WindowResize, Windowfocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -48,6 +48,8 @@ namespace Hazel {
 		{
 			return GetCategoryFlags() & category;
 		}
+
+		inline bool IsHandled() const { return m_Handled; }
 	protected:
 		bool m_Handled = false;
 	};
@@ -65,7 +67,7 @@ namespace Hazel {
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
-			if (m_Event.GetEventType() == T::GetStaticType())
+			if (m_Event.GetEventType() == T::GetStaticEventType())
 			{
 				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;

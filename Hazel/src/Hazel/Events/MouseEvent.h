@@ -30,7 +30,7 @@ namespace Hazel {
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
-			: m_XOffset(xOffset), m_YOfsset(yOffset) {}
+			: m_XOffset(xOffset), m_YOffset(yOffset) {}
 
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
@@ -79,6 +79,7 @@ namespace Hazel {
 
 	class HAZEL_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
+	public:
 		MouseButtonReleasedEvent(int button)
 			: MouseButtonEvent(button) {}
 
