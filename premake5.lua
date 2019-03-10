@@ -118,6 +118,7 @@ project "Sandbox"
 	{
 		"Hazel/vendor/spdlog/include",
 		"%{IncludeDir.glm}",
+		"Hazel/vendor/imgui",
 		"Hazel/src"
 	}
 
