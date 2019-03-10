@@ -5,6 +5,8 @@
 
 #include "Input.h"
 
+#include "glm/glm.hpp"
+
 
 namespace Hazel {
 
