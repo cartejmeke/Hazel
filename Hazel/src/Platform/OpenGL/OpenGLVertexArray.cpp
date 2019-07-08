@@ -5,7 +5,7 @@
 
 namespace Hazel {
 
-	static GLenum ShaderDatTypeToOpenGLBaseType(ShaderDataType type)
+	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 	{
 		switch (type)
 		{
@@ -59,7 +59,7 @@ namespace Hazel {
 		{
 			glEnableVertexAttribArray(index);
 			glVertexAttribPointer(index, element.GetComponentCount(),
-				ShaderDatTypeToOpenGLBaseType(element.Type),
+				ShaderDataTypeToOpenGLBaseType(element.Type),
 				element.Normalized ? GL_TRUE : GL_FALSE,
 				layout.GetStride(),
 				(const void*)element.Offset);
